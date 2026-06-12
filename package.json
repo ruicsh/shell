@@ -2,7 +2,10 @@
 	"name": "@tuplo/shell",
 	"description": "Calling shell commands made easier",
 	"version": "0.0.0-development",
-	"repository": "https://github.com/ruicsh/shell.git",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ruicsh/shell.git"
+	},
 	"author": "Rui Costa",
 	"license": "MIT",
 	"scripts": {
