@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [22.x, 24.x, 26.x]
     steps:
       - uses: actions/checkout@main
         with:
           fetch-depth: "0"
       - uses: actions/setup-node@main
         with:
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
       - uses: actions/cache@main
         with:
           path: node_modules
