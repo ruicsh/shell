@@ -23,8 +23,7 @@ function exec(command: string, options?: IExecArgs): Promise<IExecReturnValue> {
 			console.log(`$ ${command}`);
 		}
 
-		const [program, ...args] = command.split(" ");
-		const child = spawn(program, args, { shell: true, stdio: "pipe" });
+		const child = spawn(command, [], { shell: true, stdio: "pipe" });
 
 		if (input) {
 			child.stdin?.write(input);
