@@ -30,6 +30,11 @@ jobs:
   publish-to-npm:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     steps:
       - uses: actions/checkout@main
         with:
@@ -44,5 +49,4 @@ jobs:
       - name: Semantic Release
         run: npx semantic-release --branches main
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
